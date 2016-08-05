@@ -40,10 +40,18 @@ public class MainMovies {
 		System.out.println("Here are the movies available in the " + category + " category:");
 		
 		Movies m1 = new Movies(title, category);
-		m1.setTitle(title);
-		m1.setCategory(category);
+		//m1.setTitle(title);
+		//m1.setCategory(category);
+		m1.setCategory(scan1.toString());
 		
-		if(category.equalsIgnoreCase("animated")){
+		//simplifying multiple if statements into a for loop
+		for (int a=0;a< movieList.size(); a++){
+			if(category.equalsIgnoreCase(movieList.get(a).getCategory())){
+			System.out.println(movieList.get(a).getTitle());	
+			}
+			}
+		
+		/*if(category.equalsIgnoreCase("animated")){
 			System.out.println(movieList.get(0).getTitle());
 			System.out.println(movieList.get(1).getTitle());
 			System.out.println(movieList.get(2).getTitle());
@@ -63,10 +71,10 @@ public class MainMovies {
 			System.out.println(movieList.get(10).getTitle());
 			System.out.println(movieList.get(11).getTitle());
 		}
-		
+		*/
 		
 		System.out.println();
-		System.out.println("Would you like to select from a different category?");
+		System.out.println("Would you like to select from a different category? (y/n)");
 		choice = scan1.nextLine();
 	}
 		
